@@ -9,5 +9,9 @@ class Informant:
         raw_json = request.stream.read()
         data = CaseInsensitiveDict(json.loads(raw_json))
         status = send_message(data["message"])
-        response.body = json.dumps({"sucess": bool(status)})
-        response.status = falcon.HTTP_201
+        sucess = bool(status)
+        response.body = json.dumps({"sucess": sucess})
+        if sucess:
+            response.status = falcon.HTTP_201
+        else:
+            response.status = falcon.HTTP_200
