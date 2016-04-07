@@ -2,9 +2,9 @@ import os
 import telepot
 
 
-def send_message(message):
+def send_message(user_id, message):
     try:
         bot = telepot.Bot(os.getenv("INFORMER_BOT_TOKEN"))
-        return bot.sendMessage(os.getenv("TELEGRAM_USER_ID"), message)
+        return bot.sendMessage(user_id, message)
     except Exception:
         return False
