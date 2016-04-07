@@ -2,3 +2,4 @@ gunicorn
 falcon
 requests
 telepot
+case_insensitive_dict
