@@ -3,4 +3,4 @@ from resources.informant import Informant
 
 
 app = falcon.API()
-app.add_route("/informant", Informant())
+app.add_route("/", Informant())
